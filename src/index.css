@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, .font-fredoka {
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  input, textarea, select {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+.btn-3d {
+  position: relative;
+  border-radius: 0.9rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 0.14s cubic-bezier(0.16, 1, 0.3, 1), filter 0.14s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.btn-3d:active {
+  transform: translateY(3px);
+}
+
+.btn-emerald {
+  background: linear-gradient(180deg, #34d399 0%, #10b981 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #047857, 0 6px 14px rgba(16, 185, 129, 0.3);
+}
+.btn-emerald:active { box-shadow: 0 1px 0 #047857; }
+
+.btn-sky {
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #0369a1, 0 6px 14px rgba(2, 132, 199, 0.3);
+}
+.btn-sky:active { box-shadow: 0 1px 0 #0369a1; }
+
+.btn-purple {
+  background: linear-gradient(180deg, #a78bfa 0%, #7c3aed 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #5b21b6, 0 6px 14px rgba(124, 58, 237, 0.3);
+}
+.btn-purple:active { box-shadow: 0 1px 0 #5b21b6; }
+
+.btn-orange {
+  background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #9a3412, 0 6px 14px rgba(234, 88, 12, 0.3);
+}
+.btn-orange:active { box-shadow: 0 1px 0 #9a3412; }
+
+.btn-pink {
+  background: linear-gradient(180deg, #f472b6 0%, #db2777 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #9d174d, 0 6px 14px rgba(219, 39, 119, 0.3);
+}
+.btn-pink:active { box-shadow: 0 1px 0 #9d174d; }
+
+.btn-yellow {
+  background: linear-gradient(180deg, #fde047 0%, #eab308 100%);
+  color: #0f172a;
+  box-shadow: 0 4px 0 #a16207, 0 6px 14px rgba(234, 179, 8, 0.3);
+}
+.btn-yellow:active { box-shadow: 0 1px 0 #a16207; }
+
+.btn-slate {
+  background: linear-gradient(180deg, #64748b 0%, #475569 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #1e293b, 0 6px 14px rgba(30, 41, 59, 0.3);
+}
+.btn-slate:active { box-shadow: 0 1px 0 #1e293b; }
+
+/* Solid/translucent surfaces without backdrop-filter over WebGL so software WebGL never stalls */
+.hud-surface-light {
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+}
+
+.hud-surface-dark {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.3);
+  color: #ffffff;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow {
+    animation: none;
+  }
+}
+
+/* Custom thin scrollbars inside modals */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.6);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

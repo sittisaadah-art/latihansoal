@@ -1,0 +1,6 @@
+{
+  "name": "EDUBLOX – Informatics Adventure City",
+  "description": "Game petualangan edukasi 3D Informatika Kelas VII dengan 5 gedung materi, 50 soal interaktif, kustomisasi avatar, kantin, leaderboard, dan panel guru. By Sitty.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
