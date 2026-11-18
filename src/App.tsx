@@ -10,6 +10,7 @@ import { QuizModal } from './components/QuizModal';
 import { RekapModal } from './components/RekapModal';
 import { ResultModal } from './components/ResultModal';
 import { TeacherModal } from './components/TeacherModal';
+import { TeacherPinModal } from './components/TeacherPinModal';
 import { AVATARS, DEFAULT_QUESTIONS } from './data/questions';
 import {
   AppState,
@@ -46,6 +47,7 @@ type ActiveModal =
   | 'canteen'
   | 'leaderboard'
   | 'rekap'
+  | 'teacherPin'
   | 'teacher'
   | 'result';
 
@@ -389,7 +391,7 @@ export default function App() {
           onStartMode={handleStartMode}
           onOpenCharacter={() => setActiveModal('character')}
           onOpenRekap={() => setActiveModal('rekap')}
-          onOpenTeacher={() => setActiveModal('teacher')}
+          onOpenTeacher={() => setActiveModal('teacherPin')}
         />
       ) : (
         <HudOverlay
@@ -403,7 +405,7 @@ export default function App() {
           onOpenCanteen={() => setActiveModal('canteen')}
           onOpenLeaderboard={() => setActiveModal('leaderboard')}
           onOpenRekap={() => setActiveModal('rekap')}
-          onOpenTeacher={() => setActiveModal('teacher')}
+          onOpenTeacher={() => setActiveModal('teacherPin')}
           onOpenCharacter={() => setActiveModal('character')}
           onReturnHome={() => {
             setQuizState((prev) => ({ ...prev, active: false }));
@@ -512,6 +514,14 @@ export default function App() {
             showToast('🗑️ Log aktivitas rekap telah dikosongkan.', 'info');
           }}
           onShowToast={showToast}
+          onClose={() => setActiveModal(null)}
+        />
+      )}
+
+      {/* Teacher PIN Gate Modal */}
+      {activeModal === 'teacherPin' && (
+        <TeacherPinModal
+          onSuccess={() => setActiveModal('teacher')}
           onClose={() => setActiveModal(null)}
         />
       )}
